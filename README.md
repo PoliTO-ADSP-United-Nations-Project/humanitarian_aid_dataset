@@ -8,15 +8,18 @@ To the best of our knowledge, no similar dataset currently exists that aggregate
 The dataset created starts from a preliminary assumption: in general, the first countries of arrival in Europe are Italy, Spain, and Greece. This assumption derives not only from the evident geographical conformations of the Mediterranean and the migratory routes, but also from the scarcity of data regarding the rest of the European nations.
 
 Given this assumption, we show in this graph the countries of origin of the potential migratory flows, which have a more consistent impact on the data.
-<p align="center">
-  <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/cntrs.png" title="countries" alt="countries" height="500"/>
-</p>
+<div align="center">
+  <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/country.png" title="countries" alt="countries" height="300"/>
+</div>
 
 The dataset was built merging information from different resources, which include:
+<div align="center">
+
 |Type         |Source         |🔗        |
-|-------------|---------------|----------|
+|:-------------:|:---------------:|:----------:|
 |***Climate Events*** | The World Bank CCKP| [`Link`](https://climateknowledgeportal.worldbank.org/)|
 |***Migration Inflows*** | International Organization for Migration| [`Link`](https://migration.iom.int/europe/arrivals#content-tab-anchor)|
 |***Social Indices*** | UN Development Reports| [`Link`](https://hdr.undp.org/data-center/documentation-and-downloads)|
 |***Humanitarian Crisis*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
 
+</div>
