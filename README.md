@@ -15,7 +15,7 @@ Given this assumption, we show in this graph the countries of origin of the pote
 The dataset was built merging information from different resources, which include:
 <div align="center">
 
-|Type         |Source         |🔗        |
+|**Type**         |**Source**         |🔗        |
 |:-------------:|:---------------:|:----------:|
 |***Climate Events*** | The World Bank CCKP| [`Link`](https://climateknowledgeportal.worldbank.org/)|
 |***Migration Inflows*** | International Organization for Migration| [`Link`](https://migration.iom.int/europe/arrivals#content-tab-anchor)|
