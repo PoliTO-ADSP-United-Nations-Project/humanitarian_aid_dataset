@@ -1,0 +1,9 @@
+pandas==1.5.3
+numpy
+xlrd==2.0.1
+requests==2.28.2
+netCDF4==1.6.2
+geopy==2.3.0
+pycountry==22.3.5
+openpyxl==3.0.10
+tqdm
