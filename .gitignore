@@ -1,5 +1,7 @@
 # Dataset
 *.csv
+*.pkl
+*.xlsx
 
 # Pyre type checker
 .pyre/
