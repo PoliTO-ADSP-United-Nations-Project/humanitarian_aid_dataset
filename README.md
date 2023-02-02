@@ -23,3 +23,36 @@ The dataset was built merging information from different resources, which includ
 |***Humanitarian Crisis*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
 
 </div>
+
+-------------------------------------------------------------
+
+## Cloning the repo
+To cloning the repo throgh HTTPS or SSH, you must have installed Git on your operating system.<br>
+Then you can open a new terminal and type the following command (this is the cloning throgh HTTPS):
+```bash
+    git clone https://github.com/fracapuano/NetworkDynamics.git
+```
+If you don't have installet Git, you can simply download the repository by pressing <i>"Download ZIP"</i>.
+
+-------------------------------------------------------------
+
+## Environment
+Once the repo is cloned, some python libraries are required to properly set up your (virtual) environment.
+They can be installed via pip:
+```bash
+    pip install -r requirements.txt
+```
+or via conda:
+```bash
+    conda create --name <env_name> --file requirements.txt
+```
+
+-------------------------------------------------------------
+
+## Execution
+The `main.py` is the entry point of the execution.<br>
+You can run the program in this way:
+```bash
+python main.py
+```
+The program was built with a python version ```>= 3.8```: any lower version will not guarantee the correct execution of the software.
