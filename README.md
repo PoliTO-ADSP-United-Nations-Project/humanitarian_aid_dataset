@@ -1,4 +1,4 @@
-# Time-Series Forecasting for Humanitarian Aid - ***dataset***
+# Time-Series Forecasting for Humanitarian Aid - ***VAL2G dataset***
 
 We present in this repository the most important result of the project carried out in collaboration with the UNSSC: a new dataset for time-series forecasting on migratory flows.
 
@@ -11,6 +11,9 @@ Given this assumption, we show in this graph the countries of origin of the pote
 <div align="center">
   <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/country.png" title="countries" alt="countries" height="300"/>
 </div>
+
+You can directly <b>download</b> the final version of VAL2G dataset here:
+https://figshare.com/articles/dataset/VAL2G_-_Dataset/22006961
 
 ## **Features Description**
 
