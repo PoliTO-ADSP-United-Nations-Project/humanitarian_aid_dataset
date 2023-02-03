@@ -12,6 +12,24 @@ Given this assumption, we show in this graph the countries of origin of the pote
   <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/country.png" title="countries" alt="countries" height="300"/>
 </div>
 
+## **Features Description**
+
+All the data are monthly based: this is the finest granularity that we found online and in addition, for the context in which this project is placed, it would make no sense to guarantee a daily prediction as it would not be usable.
+The final dataset is composed of the following features:
+
+|**Feature**         |**Type**         |**Description**        |
+|:-------------:|:---------------:|:----------:|
+|Monthly inflow| `Integer`| Migrant from a departure country to the arrival country.|
+| Fatalities | `Integer` | Number of death in the country of departure.|
+|HDI|`Float`| Human development index (i.e. statistic composite index of life expectancy, education, and per capita income indicators).|
+|Distance Departure Destination| `Float` | Distance between capitals of departure and destination country in Km.|
+|Percentage of currency change | `Float` | Currency change rate with respect to the previous month.|
+|Sum Inflow| `Integer` | Total migrants' inflow per country of arrival.|
+|Date | `String` | Month and year.|
+|Destination country|`String`|Destination country's ISO code.|
+|Departure country|`String` | Departure country's ISO code.|
+ 
+
 The dataset was built merging information from different resources, which include:
 <div align="center">
 
@@ -30,7 +48,7 @@ The dataset was built merging information from different resources, which includ
 To cloning the repo throgh HTTPS or SSH, you must have installed Git on your operating system.<br>
 Then you can open a new terminal and type the following command (this is the cloning throgh HTTPS):
 ```bash
-    git clone https://github.com/fracapuano/NetworkDynamics.git
+    git clone https://github.com/PoliTO-ADSP-United-Nations-Project/humanitarian_aid_dataset
 ```
 If you don't have installet Git, you can simply download the repository by pressing <i>"Download ZIP"</i>.
 
