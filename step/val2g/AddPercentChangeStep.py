@@ -7,10 +7,13 @@ import pandas as pd
 from base.Step import Step
 from constant.AvaiableCountries import COUNTRIES_CURRENCY
 from constant.DatasetUrl import PERCENTAGE_MONEY_CHANGE
+from utils.DateUtils import DateUtils
 from utils.FigshareUtils import FigshareUtils
 
 
 def _add_percent_change(df_arrival_country: pd.DataFrame, percentage_money_path: str) -> pd.DataFrame:
+    df_arrival_country = df_arrival_country[
+        df_arrival_country.columns.drop(list(df_arrival_country.filter(regex='Unnamed')))]
     for country, currency in COUNTRIES_CURRENCY:
         if country == "PSE":
             df_arrival_country[f"Perc_Change_PSE"] = 0
@@ -49,9 +52,13 @@ class AddPercentChangeStep(Step):
             raise URLError('Error during downloading the percentage money change dataset')
 
         # Get datasets
-        final_df_esp = pd.read_csv(os.path.join(FINAL_PATH, 'final_esp.csv'))
-        final_df_ita = pd.read_csv(os.path.join(FINAL_PATH, 'final_ita.csv'))
-        final_df_grc = pd.read_csv(os.path.join(FINAL_PATH, 'final_grc.csv'))
+        index_dates = DateUtils.get_index_dates()
+        final_df_esp = pd.read_csv(os.path.join(FINAL_PATH, 'final_esp.csv')).set_index(index_dates)
+        final_df_ita = pd.read_csv(os.path.join(FINAL_PATH, 'final_ita.csv')).set_index(index_dates)
+        final_df_grc = pd.read_csv(os.path.join(FINAL_PATH, 'final_grc.csv')).set_index(index_dates)
+        final_df_esp.index = pd.to_datetime(final_df_esp.index)
+        final_df_ita.index = pd.to_datetime(final_df_ita.index)
+        final_df_grc.index = pd.to_datetime(final_df_grc.index)
         # Add percent change columns
         final_df_esp = _add_percent_change(final_df_esp, os.path.join(FINAL_PATH, 'percentage_change'))
         final_df_ita = _add_percent_change(final_df_ita, os.path.join(FINAL_PATH, 'percentage_change'))
