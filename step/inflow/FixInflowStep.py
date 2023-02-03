@@ -45,8 +45,8 @@ class FixInflowStep(Step):
         # Clean dataset
         df_esp = df_esp.query("not Monthly_inflow.isnull()", engine='python')
         df_esp = df_esp.query("ISO3_of_Origin != 'OOO' & ISO3_of_Origin != 'OOS'", engine='python')
-        df_esp = df_esp.query("not Min_T.isnull() & not Max_T.isnull() & not Avg_T.isnull() & not mm_Percip.isnull()",
-                              engine='python')
+        """df_esp = df_esp.query("not Min_T.isnull() & not Max_T.isnull() & not Avg_T.isnull() & not mm_Percip.isnull()",
+                              engine='python')"""
 
         # ITA
         df_ita = pd.read_csv(ITA_INFLOW_FILE)
@@ -55,8 +55,8 @@ class FixInflowStep(Step):
         # Clean dataset
         df_ita = df_ita.query("not Monthly_inflow.isnull()", engine='python')
         df_ita = df_ita.query("ISO3_of_Origin != 'XKX'", engine='python')
-        df_ita = df_ita.query("not Min_T.isnull() & not Max_T.isnull() & not Avg_T.isnull() & not mm_Percip.isnull()",
-                              engine='python')
+        """df_ita = df_ita.query("not Min_T.isnull() & not Max_T.isnull() & not Avg_T.isnull() & not mm_Percip.isnull()",
+                              engine='python')"""
 
         # GRC
         df_grc = pd.read_csv(GRC_INFLOW_FILE)
@@ -66,8 +66,8 @@ class FixInflowStep(Step):
         # Clean dataset
         df_grc = df_grc.query("not Monthly_inflow.isnull()", engine='python')
         df_grc = df_grc.query("ISO3_of_Origin != 'XKX'", engine='python')
-        df_grc = df_grc.query("not Min_T.isnull() & not Max_T.isnull() & not Avg_T.isnull() & not mm_Percip.isnull()",
-                              engine='python')
+        """df_grc = df_grc.query("not Min_T.isnull() & not Max_T.isnull() & not Avg_T.isnull() & not mm_Percip.isnull()",
+                              engine='python')"""
 
         # Save file
         with open(os.path.join(path, 'esp_merged_cleaned.csv'), 'w', encoding='utf-8-sig') as f:
