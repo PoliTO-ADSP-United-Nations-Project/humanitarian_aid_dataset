@@ -9,14 +9,14 @@ from utils.FileUtils import FileUtils
 
 
 def _put_climate_data(climate_path: str, iso: str, type_of_climate: str, name_of_column: str,
-                      df: pd.DataFrame) -> None:
+                      df: pd.DataFrame) -> pd.DataFrame:
     file = FileUtils.find_files(str(iso) + '*.csv', climate_path + "/" + str(type_of_climate))
     if len(file) > 0:
         file = file[0]
     else:
         print(
             f'-File doesn\'t exists: {climate_path + "/" + str(type_of_climate) + "/" + str(iso) + "*.csv"}')
-        return
+        return df
 
     df_climate = pd.read_csv(file)
     df_climate = df_climate[df_climate.columns.drop(list(df_climate.filter(regex='Unnamed')))]
@@ -27,6 +27,7 @@ def _put_climate_data(climate_path: str, iso: str, type_of_climate: str, name_of
             date = date_base + "0" + str(month) if month < 9 else date_base + str(month)
             query = "`Reported_Date` == @date and `ISO3_of_Origin` == @iso"
             df.loc[df.eval(query), name_of_column] = row.iloc[month]
+    return df
 
 
 def _merge_inflow_dataset(path: str, climate_path: str) -> pd.DataFrame:
@@ -41,10 +42,10 @@ def _merge_inflow_dataset(path: str, climate_path: str) -> pd.DataFrame:
 
         # Add climate information
         for iso in df['ISO3_of_Origin'].unique():
-            _put_climate_data(climate_path, iso, 'min_temp', 'Min_T', df)
-            _put_climate_data(climate_path, iso, 'max_temp', 'Max_T', df)
-            _put_climate_data(climate_path, iso, 'avg_temp', 'Avg_T', df)
-            _put_climate_data(climate_path, iso, 'mm_prec', 'mm_Percip', df)
+            df = _put_climate_data(climate_path, iso, 'min_temp', 'Min_T', df)
+            df = _put_climate_data(climate_path, iso, 'max_temp', 'Max_T', df)
+            df = _put_climate_data(climate_path, iso, 'avg_temp', 'Avg_T', df)
+            df = _put_climate_data(climate_path, iso, 'mm_prec', 'mm_Percip', df)
         # Merge dfs into only one df
         final_df = pd.concat([final_df, df])
         print(f'dataset length: {len(final_df)}')
@@ -71,7 +72,8 @@ class MergeStep(Step):
         if not os.path.exists(ESP_FOLDER) or not os.path.exists(ITA_FOLDER) \
                 or not os.path.exists(GRC_FOLDER):
             raise FileNotFoundError('Error: no inflow datasets found (check inside ESP, GRC or ITA)')
-        if os.path.exists(os.path.join(path, "esp_merged.csv")) and os.path.exists(os.path.join(path, "ita_merged.csv")) and\
+        if os.path.exists(os.path.join(path, "esp_merged.csv")) and os.path.exists(
+                os.path.join(path, "ita_merged.csv")) and \
                 os.path.exists(os.path.join(path, "grc_merged.csv")):
             return False
         return True
@@ -85,7 +87,7 @@ class MergeStep(Step):
         ITA_FOLDER = os.path.join(path, "ita")
         GRC_FOLDER = os.path.join(path, "grc")
 
-        # ESP
+        # Merge inflow dataset
         final_esp_df = _merge_inflow_dataset(ESP_FOLDER, self.params['climate_path'])
         final_ita_df = _merge_inflow_dataset(ITA_FOLDER, self.params['climate_path'])
         final_grc_df = _merge_inflow_dataset(GRC_FOLDER, self.params['climate_path'])
