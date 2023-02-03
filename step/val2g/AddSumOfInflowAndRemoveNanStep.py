@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 
 from base.Step import Step
+from utils.DateUtils import DateUtils
 
 
 class AddSumOfInflowAndRemoveNaN(Step):
@@ -28,9 +29,13 @@ class AddSumOfInflowAndRemoveNaN(Step):
             return
 
         # Get datasets
-        final_df_esp = pd.read_csv(os.path.join(FINAL_PATH, 'final_esp.csv'))
-        final_df_ita = pd.read_csv(os.path.join(FINAL_PATH, 'final_ita.csv'))
-        final_df_grc = pd.read_csv(os.path.join(FINAL_PATH, 'final_grc.csv'))
+        index_dates = DateUtils.get_index_dates()
+        final_df_esp = pd.read_csv(os.path.join(FINAL_PATH, 'final_esp.csv')).set_index(index_dates)
+        final_df_ita = pd.read_csv(os.path.join(FINAL_PATH, 'final_ita.csv')).set_index(index_dates)
+        final_df_grc = pd.read_csv(os.path.join(FINAL_PATH, 'final_grc.csv')).set_index(index_dates)
+        final_df_esp.index = pd.to_datetime(final_df_esp.index)
+        final_df_ita.index = pd.to_datetime(final_df_ita.index)
+        final_df_grc.index = pd.to_datetime(final_df_grc.index)
         # Add sum of inflow
         final_df_esp['Sum_Inflow'] = final_df_esp[list(final_df_esp.filter(regex="Monthl"))].sum(axis=1)
         final_df_ita['Sum_Inflow'] = final_df_ita[list(final_df_ita.filter(regex="Monthl"))].sum(axis=1)
