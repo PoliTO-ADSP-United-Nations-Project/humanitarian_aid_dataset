@@ -44,8 +44,8 @@ The dataset was built merging information from different resources, which includ
 |`A`|***Migration Inflows*** | International Organization for Migration| [`Link`](https://migration.iom.int/europe/arrivals#content-tab-anchor)|
 |`B`|***Social Indices*** | UN Development Reports| [`Link`](https://hdr.undp.org/data-center/documentation-and-downloads)|
 |`C`|***Humanitarian Crisis*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
-|`D`|***Geographical References*** | Google Maps| [`Link`]([https://acleddata.com/data-export-tool/](https://www.google.com/maps)|
-|`E`|***Currency Change*** | Banca d'Italia| [`Link`]([https://acleddata.com/data-export-tool/](https://tassidicambio.bancaditalia.it/terzevalute-wf-ui-web/timeSeries)|
+|`D`|***Geographical References*** | Google Maps| [`Link`](https://www.google.com/maps)|
+|`E`|***Currency Change*** | Banca d'Italia| [`Link`](https://tassidicambio.bancaditalia.it/terzevalute-wf-ui-web/timeSeries)|
 </div>
 Note: the IDs are not refered to the ones reported on Figshare.
 
