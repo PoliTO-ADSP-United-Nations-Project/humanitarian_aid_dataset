@@ -12,37 +12,40 @@ Given this assumption, we show in this graph the countries of origin of the pote
   <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/country.png" title="countries" alt="countries" height="300"/>
 </div>
 
-You can directly <b>download</b> the final version of VAL2G dataset here:
-https://figshare.com/articles/dataset/VAL2G_-_Dataset/22006961
+You can directly download the final version of **VAL2G** dataset from Figshare [`link`](
+https://figshare.com/articles/dataset/VAL2G_-_Dataset/22006961):
+<div align="center">
+  <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/figshare.png" title="countries" alt="countries" height="50"/>
+</div>
 
 ## **Features Description**
 
 All the data are monthly based: this is the finest granularity that we found online and in addition, for the context in which this project is placed, it would make no sense to guarantee a daily prediction as it would not be usable.
 The final dataset is composed of the following features:
 
-|**Feature**         |**Type**         |**Description**        |
-|:-------------:|:---------------:|:----------:|
-|Monthly inflow| `Integer`| Migrant from a departure country to the arrival country.|
-| Fatalities | `Integer` | Number of death in the country of departure.|
-|HDI|`Float`| Human development index (i.e. statistic composite index of life expectancy, education, and per capita income indicators).|
-|Distance Departure Destination| `Float` | Distance between capitals of departure and destination country in Km.|
-|Percentage of currency change | `Float` | Currency change rate with respect to the previous month.|
-|Sum Inflow| `Integer` | Total migrants' inflow per country of arrival.|
-|Date | `String` | Month and year.|
-|Destination country|`String`|Destination country's ISO code.|
-|Departure country|`String` | Departure country's ISO code.|
+|**Feature**         |**Type**         |**Description**        | **Source ID** |
+|:-------------:|:---------------:|:----------:|:-------:|
+|Monthly inflow| `Integer`| Migrant from a departure country to the arrival country.|`A`|
+| Fatalities | `Integer` | Number of death in the country of departure.|`C`|
+|HDI|`Float`| Human development index (i.e. statistic composite index of life expectancy, education, and per capita income indicators).|`B`|
+|Distance Departure Destination| `Float` | Distance between capitals of departure and destination country in Km.|`D`|
+|Percentage of currency change | `Float` | Currency change rate with respect to the previous month.|`E`|
+|Sum Inflow| `Integer` | Total migrants' inflow per country of arrival.|`A`|
+|Date | `String` | Month and year.|`Trasversal|
+|Destination country|`String`|Destination country's ISO code.|`A`|
+|Departure country|`String` | Departure country's ISO code.|`A`|
  
 
 The dataset was built merging information from different resources, which include:
 <div align="center">
 
-|**Type**         |**Source**         |🔗        |
-|:-------------:|:---------------:|:----------:|
-|***Climate Events*** | The World Bank CCKP| [`Link`](https://climateknowledgeportal.worldbank.org/)|
-|***Migration Inflows*** | International Organization for Migration| [`Link`](https://migration.iom.int/europe/arrivals#content-tab-anchor)|
-|***Social Indices*** | UN Development Reports| [`Link`](https://hdr.undp.org/data-center/documentation-and-downloads)|
-|***Humanitarian Crisis*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
-
+|**ID**|**Type**         |**Source**         |🔗        |
+|:------:|:-------------:|:---------------:|:----------:|
+|`A`|***Migration Inflows*** | International Organization for Migration| [`Link`](https://migration.iom.int/europe/arrivals#content-tab-anchor)|
+|`B`|***Social Indices*** | UN Development Reports| [`Link`](https://hdr.undp.org/data-center/documentation-and-downloads)|
+|`C`|***Humanitarian Crisis*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
+|`D`|***Geographical References*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
+|`E`|***Currency Change*** | The ACLED| [`Link`](https://acleddata.com/data-export-tool/)|
 </div>
 
 -------------------------------------------------------------
