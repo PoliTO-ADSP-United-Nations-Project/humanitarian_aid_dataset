@@ -13,9 +13,9 @@ Given this assumption, we show in this graph the countries of origin of the pote
 </div>
 
 You can directly download the final version of **VAL2G** dataset from Figshare [`link`](
-https://figshare.com/articles/dataset/VAL2G_-_Dataset/22006961):
+https://figshare.com/articles/dataset/VAL2G_-_Dataset/22006961).
 <div align="center">
-  <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/figshare.png" title="countries" alt="countries" height="50"/>
+  <img src="https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/imgs/figshare.png" title="Figshare" alt="Figshare" height="50"/>
 </div>
 
 ## **Features Description**
