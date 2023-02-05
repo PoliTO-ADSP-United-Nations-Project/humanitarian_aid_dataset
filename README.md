@@ -81,3 +81,17 @@ You can run the program in this way:
 python main.py
 ```
 The program was built with a python version ```>= 3.8```: any lower version will not guarantee the correct execution of the software.
+
+---
+Please, refere to the official [`paper`](https://github.com/PoliTO-ADSP-United-Nations-Project/.github/blob/main/ADSP_paper.pdf) for further information.
+
+## References
+If you find this work useful, pleace cite the paper above as:
+
+```bibtex
+@article{TSF_4_ha,
+  title={Time series forecasting for humanitarian aid},
+  author={Bergadano Lorenzo, Frigiola Arcangelo, Mantegna Giovanni, Scriotino Giovanni, Zingarelli Valerio},
+  year={2023}
+}
+```
