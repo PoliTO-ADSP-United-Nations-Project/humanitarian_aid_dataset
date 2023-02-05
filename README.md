@@ -31,7 +31,7 @@ The final dataset is composed of the following features:
 |Distance Departure Destination| `Float` | Distance between capitals of departure and destination country in Km.|`D`|
 |Percentage of currency change | `Float` | Currency change rate with respect to the previous month.|`E`|
 |Sum Inflow| `Integer` | Total migrants' inflow per country of arrival.|`A`|
-|Date | `String` | Month and year.|`Trasversal`|
+|Date | `String` | Month and year.|`Key`|
 |Destination country|`String`|Destination country's ISO code.|`A`|
 |Departure country|`String` | Departure country's ISO code.|`A`|
  
